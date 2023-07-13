@@ -29,6 +29,109 @@ body {
     background-color: var(--gray-color);
 }
 
+.start-btn,
+.info-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* start quiz styling*/
+
+.start-btn button {
+    font-size: 5rem;
+    font-weight: 500;
+    color: var(--light-green-color);
+    padding: 15px 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: var(--light-color);
+    cursor: pointer;
+}
+
+.info-box {
+    width: 540px;
+    background: var(--light-color);
+    border-radius: 5px;
+}
+
+.info-title {
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid var(--gray-color);
+    display: flex;
+    align-items: center;
+    padding: 0 35px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.info-list {
+    padding: 15px 35px;
+}
+
+.info {
+    margin: 5px 0;
+    font-size: 17px;
+}
+
+.info span {
+    font-weight: 700;
+    color: var(--light-green-color);
+}
+
+.buttons {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 35px;
+    border-top: 1px solid var(--gray-color);
+}
+
+.buttons button {
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: var(--light-color);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+button.restart {
+    color: var(--light-color);
+    border-color: var(--light-green-color);
+    background: var(--light-green-color);
+}
+
+button.restart:hover {
+    background: #274329;
+}
+
+button.restart:active {
+    transform: scale(0.99);
+}
+
+button.quit {
+    color: var(--light-green-color);
+    border-color: var(--light-green-color);
+}
+
+button.quit:hover {
+    color: var(--light-color);
+    background: var(--light-green-color);
+}
+
+button.quit:active{
+    transform: scale(0.99);
+}
+
 .wrapper {
     background-color: var(--light-color);
     padding: 1.5rem 4rem 3rem 4rem;
