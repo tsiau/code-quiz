@@ -35,6 +35,16 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0 4px 6px rgb(0 0 0 / 10%), 0 1px 3px rgb(0 0 0 / 10%);
+    transition: all 0.3 ease;
+}
+
+.info-box.activeInfo,
+.quiz_box.activeQuiz {
+    z-index: 5;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
 }
 
 /* start quiz styling*/
@@ -51,10 +61,17 @@ body {
     cursor: pointer;
 }
 
+.start-btn.show {
+    display: block;
+}
+
 .info-box {
     width: 540px;
     background: var(--light-color);
     border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
 }
 
 .info-title {
@@ -141,6 +158,11 @@ button.quit:active{
     border-bottom-left-radius: 1.5rem;
     position: relative;
     box-shadow: 0 4px 6px rgb(0 0 0 / 10%), 0 1px 3px rgb(0 0 0 / 10%);
+    display: none;
+}
+
+.wrapper.activeQuiz {
+    display: block; /* Show the wrapper when the quiz starts */
 }
 
 .quiz-title {
