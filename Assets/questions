@@ -1,0 +1,59 @@
+// What is not an example of date structure?
+// Arrays
+// Trees
+// Graphs
+// Directory (a)
+
+// What is an Array?
+// Collection of items storaed at continguous memory locations (a)
+// A Keyword that defines a variable or pointer as unchangable
+// A lanugage-independent data format
+// Programming language that is used to add interactivity to web pages
+
+// "What is LIFO?"
+// "Leave It For Others"
+// "Lets Invite Friends Out"
+// "Last In First Out" (a)
+// "Last In Fifth Out"
+
+// "What is FIFO?",
+// "First In First Out", (a)
+// "Fly In Fly Out",
+// "Fade In Fade Out",
+// "Free In Free Out",
+
+// "What is not a difference between a stack and an array?",
+// "Stack follows a Last In First Out pattern",
+// "Arrays do not follow a specific order",
+// "Data structures that can be used to store data", (a)
+// "Stack contains elements of different data types and array contains the same data type",
+
+// "Which is the best sorting algorithm?",
+// "Bubble Sort",
+// "Quick Sort",
+// "Merge Sort",
+// "Depends on the design for the specific type of data structure", (a)
+
+// "How do you not reserve a string in Java?",
+// "Declare a string",
+// "Take the length of that string",
+// "Loop through the charater of the string",
+// "Delete the charaters in reverse", (a)
+
+// "What are Variables?",
+// "Values that change within a program based on what the program is meant to do", (a)
+// "Core concept of object-oriented programming laguages",
+// "Keyword that defines a variable pointer as unchangeable",
+// "Value occuring continuously over a period of time",
+
+// "What is not a type of storage class?",
+// "Register",
+// "Static",
+// "Internal", (a)
+// "Automatic",
+
+// "Which of the below is an example of a data type?",
+// "arr",
+// "Boolean", (a)
+// "String",
+// "Long",
