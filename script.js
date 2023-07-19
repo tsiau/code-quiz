@@ -26,6 +26,7 @@ continue_btn.onclick = () => {
     quiz_box.style.display = "block"; // show the quiz box
     start_btn.classList.remove("show"); // hide the start button
     showQuestions(0); // Display the first question
+  startTimer(); // Start the timer when the quiz starts
   };
   
   let que_count = 0;
@@ -78,41 +79,45 @@ continue_btn.onclick = () => {
 submit_btn.onclick = () => {
     // Get selected option
     let userAnswer = option_list.querySelector("li.selected");
-  
+    
     if (!userAnswer) {
       // If no option is selected, prompt the user to select one
       alert("Please select an option.");
       return;
     }
   
-    // Get the text of the selected option
-    let userAnswerText = userAnswer.textContent.trim();
-  
-    // Get the correct answer text from the questions array
-    let correctAnswerText = questions[que_count].answer;
-  
-    // Check if the selected option is correct
-    if (userAnswerText === correctAnswerText) {
-      // If correct, increment the score
-      score++;
-      // Update the score display
-      document.getElementById("score").textContent = score;
+  // Get the text of the selected option
+  let userAnswerText = userAnswer.textContent.trim();
+
+  // Get the correct answer text from the questions array
+  let correctAnswerText = questions[que_count].answer;
+
+  // Check if the selected option is correct
+  if (userAnswerText === correctAnswerText) {
+    // If correct, increment the score
+    score++;
+  } else {
+    // If wrong, deduct the penalty time from the timer
+    timeLeft -= penaltyTime;
+    // Ensure the timer doesn't go below 0
+    if (timeLeft < 0) {
+      timeLeft = 0;
     }
+  }
+  // Clear the selected option for the next question
+  userAnswer.classList.remove("selected");
+
+  // Move to the next question
+  que_count++;
   
-    // Clear the selected option for the next question
-    userAnswer.classList.remove("selected");
-  
-    // Move to the next question
-    que_count++;
-  
-    // Check if there are more questions
-    if (que_count < questions.length) {
-      // Show the next question
-      showQuestions(que_count);
-    } else {
-      // No more questions, display the final score
-      showResult();
-    }
+  // Check if there are more questions
+  if (que_count < questions.length) {
+    // Show the next question
+    showQuestions(que_count);
+  } else {
+    // No more questions, display the final score
+    showResult();
+  }
 };
   }
 // Function to show the final score
@@ -142,3 +147,29 @@ play_again_btn.onclick = () => {
   quiz_box.style.display = "none";
   start_btn.classList.add("show");
 };
+
+// Set the initial time and penalty time
+const totalTime = 60; // 60 seconds
+const penaltyTime = 5; // 5 seconds penalty for each wrong answer
+
+// Initialize the timer variable
+let timeLeft = totalTime;
+let timer;
+
+// Function to start the timer
+function startTimer() {
+  timer = setInterval(function () {
+    // Update the timer display
+    document.querySelector(".timer-sec").textContent = timeLeft;
+
+    // Check if the timer has reached zero
+    if (timeLeft === 0) {
+      // End the quiz or take appropriate action
+      clearInterval(timer);
+      showResult();
+    }
+
+    // Decrease the time by 1 second
+    timeLeft--;
+  }, 1000); // Update the timer every 1000 milliseconds (1 second)
+}
