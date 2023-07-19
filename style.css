@@ -175,6 +175,7 @@ button.quit:active{
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    font-size: 24px;
 }
 
 
@@ -212,6 +213,14 @@ button.quit:active{
 
 .quiz-options li:active {
     transform: scale(0.99);
+}
+
+/* Style for selected option */
+.quiz-options li.selected {
+    background-color: var(--gray-color);
+    color: var(--dark-color);
+    border-color: var(--gray-color);
+    box-shadow: 0 5px 0 0 #989898;
 }
 
 /* selected button styling */
