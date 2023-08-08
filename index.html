@@ -1,76 +1,88 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
- <!-- Setting that the website is viewable on any device -->
- <meta http-equiv="X-UA-Compatible" content="IE-edge">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <!-- linking css file -->
- <link rel="stylesheet" href="style.css">
-    <title>Code Quiz</title>
-<!-- linking Font Awesome -->
+<head>
+  <meta charset="utf-8">
+  <!-- Setting that the website is viewable on any device -->
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- linking css file -->
+  <link rel="stylesheet" href="style.css">
+  <title>Code Quiz</title>
+  <!-- linking Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
-  <body>
- <!-- start quiz button -->   
-    <div class = "start-btn"><button>Start Quiz</button></div>
- <!-- info box/rules box-->   
-    <div class = "info-box">
-        <div class="info-title">
-            <span>Thanks for taking my quiz! Rule of this quiz:</span>
-        </div>
-        <div class="info-list">
-            <div class="info">All questions are related to coding</div>
-            <div class="info">You are given <span>60 seconds</span> to answer 10 questions</div>
-            <div class="info">All incorrect answers will result in time subtracted</div>
-            <div class="info">You'll get points on the basis of your correct answers</div>
-        </div>
-        <div class = "buttons">
-            <button class="quit">Exit Quiz</button>
-            <button class="restart">Continue</button>
-        </div>
+</head>
+<body class="flex">
+  <div class="start-btn"><button>Start Quiz</button></div>
+  <div class="info-box">
+    <div class="info-title">
+      <span>Thanks for taking my quiz! Rule of this quiz:</span>
     </div>
-  <body class = "flex">
-    <div class="wrapper">
-        <div class="quiz-head">
-            <div class="timer">
-                <div class="timer-box">
-                    <div class="time-text">Time Left</div>
-                    <div class="timer-sec">60</div>
-                </div>
-            </div>
-            <h1 class="quiz-title">Code Quiz</h1>
-        </div>               
-        <div class="quiz-score">
-            <div class="score-container">
-                <div class="score">
-                    <span class="score-label">Score:</span>
-                    <span class="score-value">
-                        <!-- Add this element to display the score -->
-                        <div class="quiz-score"><span id="score">0</span></div>
-                    </span>
-                </div>
-            </div>
-        </div>                                                                                                     
-            <div class = "quiz-body">
-                <h2 class = "quiz-question" id = "question">What is not an example of data structure?</span></h2>
-                <ul class = "quiz-options">
-                    <li>Arrays</li>
-                    <li>Trees</li>
-                    <li>Graphs</li>
-                    <li>Directory</li>
-                </ul>
-                <div id = "results">
-<!-- results here :) -->
-                </div>
-            </div>
-            <div class = "quiz-foot">
-                <button type = "button" id = "submit">Submit</button>
-                <button type = "button" id = "play-again">Play Again!</button>
-            </div>
-        </div>
+    <div class="info-list">
+      <div class="info">All questions are related to coding</div>
+      <div class="info">You are given <span>60 seconds</span> to answer 10 questions</div>
+      <div class="info">All incorrect answers will result in time subtracted</div>
+      <div class="info">You'll get points on the basis of your correct answers</div>
     </div>
-    <script src="script.js"></script>
+    <div class="buttons">
+      <button class="quit">Exit Quiz</button>
+      <button class="restart">Continue</button>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="quiz-head">
+      <div class="timer">
+        <div class="timer-box">
+          <div class="time-text">Time Left</div>
+          <div class="timer-sec">60</div>
+        </div>
+      </div>
+      <h1 class="quiz-title">Code Quiz</h1>
+    </div>
+
+    <div class="quiz-score">
+      <div class="score-container">
+        <div class="score">
+          <span class="score-label">Score:</span>
+          <span class="score-value">
+            <!-- This span will be updated with the user's score -->
+            <div class="quiz-score"><span id="score">0</span></div>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="quiz-body">
+      <h2 class="quiz-question" id="question">What is not an example of data structure?</h2>
+      <ul class="quiz-options">
+        <li>Arrays</li>
+        <li>Trees</li>
+        <li>Graphs</li>
+        <li>Directory</li>
+      </ul>
+      <div id="results">
+        <!-- results here :) -->
+      </div>
+    </div>
+
+    <div class="quiz-foot">
+      <button type="button" id="submit-btn">Submit</button>
+      <button type="button" id="play-again">Play Again!</button>
+    </div>
+
+    <!-- Add the highscore content here -->
+    <div class="highscore-page">
+      <h2 class="highscore-title">High Scores</h2>
+      <ul class="highscore-list"></ul>
+      <div class="highscore-input">
+        <input type="text" id="username-input" class="hidden" placeholder="Enter your name">
+        <button id="save-score-btn" class="hidden" disabled>Save Score</button>
+      </div>
+    </div>
+
+    <!-- Add the script for questions.js -->
     <script src="questions.js"></script>
+    <!-- Add the script for your main JavaScript file (script.js) -->
+    <script src="script.js"></script>
   </body>
 </html>

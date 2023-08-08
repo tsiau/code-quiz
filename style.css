@@ -59,6 +59,7 @@ body {
     border-radius: 5px;
     background: var(--light-color);
     cursor: pointer;
+    transform: scale(1.2rem);
 }
 
 .start-btn.show {
@@ -259,7 +260,9 @@ button.quit:active{
     transform: scale(0.95);
 }
 
-#play-again {
+#play-again,
+#username-input 
+#save-score-btn {
     display: none;
 }
 
@@ -326,7 +329,67 @@ button.quit:active{
     background-color: var(--light-green-color);
     padding: 5px;
     border-radius: 5px;
+} 
+/*Add a class to hide the elements initially */
+.hidden {
+    display: none;
+}  
+
+/* Highscore page styles */
+.highscore-page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
+  
+.highscore-page h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+  
+/* Style for the "Save Score" button */
+#save-score-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--light-green-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+  
+#save-score-btn:hover {
+    background-color: #274329; /* Dark green color */
+}
+  
+/* Style for the "Play Again" button */
+#play-again {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--light-green-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+  
+#play-again:hover {
+    background-color: #274329; /* Dark green color */
+}
+
+/* Style for the username input */
+#username {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--dark-color);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 300px;
+}  
 
 @media(max-width: 678px) {
     .quiz-title {
