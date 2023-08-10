@@ -39,6 +39,9 @@ function displayHighscores() {
   // Retrieve highscores from Local Storage
   storedHighscores = JSON.parse(localStorage.getItem("highscores")) || [];
 
+  // Get a reference to the highscore list element
+  const highscoreList = document.querySelector(".highscore-list");
+
   // Clear any existing highscore entries
   highscoreList.innerHTML = "";
 
@@ -55,14 +58,17 @@ function displayHighscores() {
 
 // Function to show the highscore page
 function showHighscorePage() {
+  highscorePage.style.display = "block" // Unhiding High Scores page
   quiz_box.classList.remove("activeQuiz"); // Hide the quiz box
   highscorePage.classList.add("activeHighscore"); // Show the highscore page
   usernameInput.classList.remove("hidden"); // Show the username input field
   saveScoreBtn.classList.remove("hidden"); // Show the "Save Score" button
-  submit_btn.classList.add("hidden"); // Hide the "Submit" button after the quiz is finished
+  let submitButton = document.getElementById("submit-btn"); // Get the submit button element by its ID
+  submitButton.style.display = "none"; // Hude the submit button
   play_again_btn.classList.remove("hidden"); // Show the "Play Again" button
 
-  // Call the function to display highscore entries
+ // Call the displayHighscores function when the highscore page is displayed
+document.querySelector(".highscore-page").style.display = "block";
   displayHighscores(); // Display the highscore entries
 }
 
@@ -71,14 +77,22 @@ function handleQuizSubmission() {
   const username = usernameInput.value;
 
   if (!username) {
-    // If no username is entered, prompt the user to enter one
-    alert("Please enter your initials.");
-    return;
+    // ...
   }
 
-  // Save the score and username to Local Storage as part of the highscores
-  storedHighscores.push({ name: username, score: score });
-  localStorage.setItem("highscores", JSON.stringify(storedHighscores)); // Convert to JSON string before storing
+  // Check if the score already exists in storedHighscores
+  const existingScoreIndex = storedHighscores.findIndex(
+    (entry) => entry.score === score
+  );
+
+  if (existingScoreIndex !== -1) {
+    // Mark the pre-saved score as not new
+    storedHighscores[existingScoreIndex].newScore = false;
+  } else {
+    // Save the new score and username to Local Storage
+    storedHighscores.push({ name: username, score: score, newScore: true });
+    localStorage.setItem("highscores", JSON.stringify(storedHighscores));
+  }
 
   // Call the function to display highscore entries
   displayHighscores();
@@ -180,6 +194,7 @@ submit_btn.onclick = () => {
     que_text.innerHTML = "Congratulations! You have completed the quiz.";
     option_list.innerHTML = "";
     showResult();
+    showHighscorePage();
 
     // Stop the timer when the quiz is completed
     clearInterval(timerInterval);
@@ -253,8 +268,8 @@ function showResult() {
   // Stop the timer when the quiz is completed
   clearInterval(timerInterval);
 
-  // Call the function to display highscore entries
-displayHighscores();
+  // Display the high scores
+  displayHighscores();
 }
   
 // Function to reset the quiz and show the start button again
@@ -286,11 +301,6 @@ play_again_btn.onclick = () => {
   // Call the showHighscorePage() function here
   showHighscorePage();
 };
-
-// Add an event listener to the username input to enable/disable the "Save Score" button
-usernameInput.addEventListener("keyup", () => {
-  saveScoreBtn.disabled = !usernameInput.value;
-});
 
 // Hide the "Save Score" button and the input field to enter the username
 saveScoreBtn.classList.add("hidden");

@@ -266,6 +266,15 @@ button.quit:active{
     display: none;
 }
 
+#username-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--dark-color);
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 300px;
+}
+
 .quiz.head {
     display: flex;
     flex-direction: column;
@@ -335,24 +344,41 @@ button.quit:active{
     display: none;
 }  
 
-/* Highscore page styles */
+/* Style for the high score page */
 .highscore-page {
     display: none;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     justify-content: center;
     height: 100vh;
+    color: var(--dark-color);
 }
-  
-.highscore-page h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+
+/* Style for the high score list */
+.highscore-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
 }
-  
+
+.highscore-list li {
+    margin-bottom: 30px;
+}
+
+/* Style for the score entries */
+.highscore-list li span {
+    font-weight: 600;
+    color: var(--light-green-color);
+}
+
 /* Style for the "Save Score" button */
 #save-score-btn {
     padding: 10px 20px;
     font-size: 16px;
+    color: var(--dark-color);
     background-color: var(--light-green-color);
     border: none;
     border-radius: 5px;
@@ -362,23 +388,26 @@ button.quit:active{
 }
   
 #save-score-btn:hover {
-    background-color: #274329; /* Dark green color */
+    background-color: var(--gray-color)
 }
   
 /* Style for the "Play Again" button */
 #play-again {
+    position: absolute;
+    bottom: 35px; /* Adjust this value to control the vertical position */
+    left: 50%;
+    transform: translateX(-50%);
     padding: 10px 20px;
     font-size: 16px;
     background-color: var(--light-green-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 10px;
     transition: background-color 0.3s;
 }
-  
+
 #play-again:hover {
-    background-color: #274329; /* Dark green color */
+    background-color: forestgreen;
 }
 
 /* Style for the username input */
