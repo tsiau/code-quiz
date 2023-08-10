@@ -60,9 +60,13 @@ This Challenge is graded based on the following criteria:
 
 * Application deployed at live URL.
 
+Live URL: https://tsiau.github.io/code-quiz/
+
 * Application loads with no errors.
 
 * Application GitHub URL submitted.
+
+GitHub URL: https://github.com/tsiau/code-quiz
 
 * GitHub repository contains application code.
 
@@ -85,6 +89,20 @@ This Challenge is graded based on the following criteria:
 * Repository contains multiple descriptive commit messages.
 
 * Repository contains quality readme file with description, screenshot, and link to deployed application.
+
+Screenshots: 
+
+<img width="1728" alt="Screenshot 2023-08-09 at 7 36 52 PM" src="https://github.com/tsiau/code-quiz/assets/135296454/e6268df7-d3a7-4f1a-8dba-268db0a61c2e">
+
+<img width="1728" alt="Screenshot 2023-08-09 at 7 37 33 PM" src="https://github.com/tsiau/code-quiz/assets/135296454/aad40c5a-4da0-498e-b85f-9831c1a2dc3f">
+
+<img width="1728" alt="Screenshot 2023-08-09 at 7 37 48 PM" src="https://github.com/tsiau/code-quiz/assets/135296454/c8afdbdf-6c99-486d-b1fc-3d6bbc4398d0">
+
+<img width="1728" alt="Screenshot 2023-08-09 at 7 38 07 PM" src="https://github.com/tsiau/code-quiz/assets/135296454/42e4ebeb-e8e6-4557-b310-1055fb2ee54f">
+
+<img width="1728" alt="Screenshot 2023-08-09 at 7 38 18 PM" src="https://github.com/tsiau/code-quiz/assets/135296454/b92a4de4-f99a-4e63-8f23-33216bfda457">
+
+<img width="1728" alt="Screenshot 2023-08-09 at 7 38 25 PM" src="https://github.com/tsiau/code-quiz/assets/135296454/693ad05a-acbf-4c7e-b4f8-2cc5ddbca4db">
 
 ## Review
 
